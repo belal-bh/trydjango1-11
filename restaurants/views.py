@@ -6,5 +6,16 @@ from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse("Hello")
+    html_ = """
+    <!DOCTYPE html>
+    <html lang="en"><head>
+    <meta charset="utf-8">
+    </head>
+    <body>
+    <h1>Hello world !</h1>
+    <p>This is html comming through</p>
+    </body>
+    </html>
+    """
+    return HttpResponse(html_)
     # return render(request, "home.html", {})  # response
