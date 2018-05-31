@@ -5,10 +5,9 @@ from django.shortcuts import render
 # Function based view
 
 
-def home(request):
+def home_n(request):   # use Ctrl+Shift+/ for miltiline comment in sublime text 3
     html_var = 'f string ( python-3.6 ) '
-    html_ = f"""
-    <!DOCTYPE html>
+    html_ = f"""<!DOCTYPE html>
     <html lang="en"><head>
     <meta charset="utf-8">
     </head>
@@ -19,4 +18,7 @@ def home(request):
     </html>
     """
     return HttpResponse(html_)
-    # return render(request, "home.html", {})  # response
+
+
+def home(request):
+    return render(request, "base.html", {"html_var": "context variable"})
