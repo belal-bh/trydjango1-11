@@ -1,3 +1,4 @@
+import random
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -5,20 +6,18 @@ from django.shortcuts import render
 # Function based view
 
 
-def home_n(request):   # use Ctrl+Shift+/ for miltiline comment in sublime text 3
-    html_var = 'f string ( python-3.6 ) '
-    html_ = f"""<!DOCTYPE html>
-    <html lang="en"><head>
-    <meta charset="utf-8">
-    </head>
-    <body>
-    <h1>Hello world !</h1>
-    <p>This is { html_var } comming through</p>
-    </body>
-    </html>
-    """
-    return HttpResponse(html_)
-
-
 def home(request):
-    return render(request, "base.html", {"html_var": "context variable"})
+    num = None
+    rand_list = [
+        random.randint(0, 20008),
+        random.randint(0, 9333333),
+        random.randint(0, 32222222),
+    ]
+    condition_bool_item = True
+    if condition_bool_item:
+        num = random.randint(0, 160131)
+    context = {
+        "num": num,
+        "rand_list": rand_list,
+    }
+    return render(request, "base.html", context)

@@ -5,6 +5,14 @@
 </head>
 <body>
     <h1>Hello world !</h1>
-    <p>This is {{ html_var }} comming through</p>
+    <p>This is comming through</p>
+    <p>
+        {% for number in rand_list  %}
+            Random number is : {{ number }} <br>
+        {% endfor %}
+    </p>
+    <p>
+        This is another random number : {{ num }} <br>
+    </p>
 </body>
 </html>
