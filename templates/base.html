@@ -1,31 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <title>{% block head_title %}Djangoproject.com{% endblock head_title %}</title>
 </head>
 <body>
     <h1>Hello world !</h1>
-    <p>This is built-in temlates tag comming through</p>
-    <p>
-        {% for number in rand_list  %}
-            {% if number|divisibleby:"2" %}
-                Even number is : {{ number }} <br>
-            {% else %}
-                Odd number is : {{ number }} <br>
-            {% endif %}
-        {% endfor %}
-    </p>
-    <p>
-        This is another random number : {{ num }} <br>
-    </p>
-    {% verbatim %}
-        {% for number in rand_list  %}
-            {% if number|divisibleby:"2" %}
-                Even number is : {{ number }} <br>
-            {% else %}
-                Odd number is : {{ number }} <br>
-            {% endif %}
-        {% endfor %}
-    {% endverbatim %}
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>

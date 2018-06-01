@@ -7,17 +7,18 @@ from django.shortcuts import render
 
 
 def home(request):
-    num = None
-    rand_list = [
-        random.randint(0, 20008),
-        random.randint(0, 9333333),
-        random.randint(0, 32222222),
-    ]
-    condition_bool_item = True
-    if condition_bool_item:
-        num = random.randint(0, 160131)
     context = {
-        "num": num,
-        "rand_list": rand_list,
     }
-    return render(request, "base.html", context)
+    return render(request, "home.html", context)
+
+
+def about(request):
+    context = {
+    }
+    return render(request, "about.html", context)
+
+
+def contact(request):
+    context = {
+    }
+    return render(request, "contact.html", context)
