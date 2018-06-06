@@ -28,5 +28,6 @@ def contact(request):
 # Class based view
 class ContactView(View):
     def get(self, request, *args, **kwargs):
+        print(kwargs)
         context = {}
         return render(request, "contact.html", context)
